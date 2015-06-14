@@ -2,6 +2,8 @@
 
 ## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
 
+[zerimar-bloccit](http:/git.heroku.com/zerimar-bloccit.git)
+
 Made with my mentor at [Bloc](http://bloc.io).
 
 This README would normally document whatever steps are necessary to get the
