@@ -9,6 +9,11 @@ require 'faker'
 end
 posts = Post.all
 
+Post.find_or_create_by!(
+  title: "When Harry Met Sally",
+  body: "This is my favorite movie."
+)
+
 # Create Comments
 100.times do
   Comment.create!(
@@ -16,6 +21,11 @@ posts = Post.all
     body: Faker::Lorem.paragraph
   )
 end
+
+Comment.find_or_create_by!(
+  post: posts.last,
+  body: "Mine too!"
+)
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
