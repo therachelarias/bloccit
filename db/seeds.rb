@@ -1,9 +1,10 @@
-Post.find_or_create_by(
+post = Post.find_or_create_by(
   title: "When Harry Met Sally",
   body: "This is my favorite movie."
 )
 
 Comment.find_or_create_by(
+  post: post,
   body: "Mine too!"
 )
 
