@@ -21,16 +21,10 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-group :development, :test do
-  gem 'byebug'
-
-  gem 'web-console', '~> 2.0'
-
-  gem 'spring'
-end
 
 gem 'devise'
 gem 'faker'
 gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'figaro'
+gem 'pundit'
