@@ -12,10 +12,12 @@ class PostPolicy < ApplicationPolicy
   end
 
     def resolve
-      if user.admin? || user.moderator?
+      if user.present? && user.admin? || user.present? && user.moderator?
         scope.all
+      elsif user.present?
+        scope.where(user: user)
       else
-        scope.where(:user => user)
+        scope.none
       end
     end
   end
