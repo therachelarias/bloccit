@@ -13,6 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20150701011454) do
 
+ActiveRecord::Schema.define(version: 20150703195524) do
+
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "post_id"
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 20150701011454) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "role"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
