@@ -23,7 +23,6 @@
   </div> 
 </div>
 
-if policy(@new_comment).new?
   <div class="row">
     <div class="col-md-8">
       <%= render partial: "comments/form", locals: {post: @post, topic: @topic, comment: @new_comment} %>
