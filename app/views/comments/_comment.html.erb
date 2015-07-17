@@ -4,6 +4,7 @@
   </div>
   <div class="media-body">
     <%= comment.body %>
+    if <% comment.user %>
     <p>
       <small>
         submitted <%= time_ago_in_words(comment.created_at) %> ago by
