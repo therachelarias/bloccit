@@ -12,13 +12,13 @@ class CommentsController < ApplicationController
       redirect_to [@post.topic, @post]
     else
       flash[:error] = "Comment did not save. Please try again."
-      redirect_to [@post.topic, @post]
+      redirect_to [@comment.post.topic, @comment.post]
     end
   end
 
   def destroy
-    @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
+    @post = Post.find(params[:post_id])
+    @topic = @post.topic
     @comment = @post.comments.find(params[:id])
 
     authorize @comment
