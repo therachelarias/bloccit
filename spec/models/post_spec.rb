@@ -1,6 +1,23 @@
 require 'rails_helper'
 
 describe Post do
+  describe "validations" do
+    context "title" do
+      before do
+        @valid_post = Post.new(title: 'This is my story')
+        @invalid_post = Post.new(title: 'hi')
+        @valid_post.valid?
+        @invalid_post.valid?
+      end
+      it "allows 'This is my story' as a title" do
+        expect(@valid_post.errors[:title].count).to eq(0)
+      end
+
+      it "does not allow 'Hi'" do
+        expect(@invalid_post.errors[:title].count).to eq(1)
+      end
+    end
+  end
   describe "vote methods" do
 
     before do
